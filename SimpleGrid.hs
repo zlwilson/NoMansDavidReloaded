@@ -18,15 +18,16 @@ sgmovesALL = [GoLeft, GoRight, GoUp, GoDown]
 sgmovesTR = [GoDown, GoLeft]
 sgmovesBR = [GoUp, GoLeft]
 sgmovesBL = [GoUp, GoRight]
+
 gb = [50, 86, 73,
       68, 65, 68,
       420, 41, 69,
       80, 08, 5]
 
-type SGState =  (Int, Int, [Int])  -- (mine, house, random numbec)
+type SGState =  (Int, Int, [Int])  -- (location, moves left, gameboard)
 
 --- simple grid game ---
---- get David = 360 ---
+--- get DAVID (= 360) ---
 sggame :: Game SGMove SGState [Double]
 
 sggame (Move GoLeft (i,c,gb))
